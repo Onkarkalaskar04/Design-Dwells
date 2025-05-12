@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Design Gallery</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            color: #333;
+            padding-top: 120px;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        header {
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        header h1 {
+            font-size: 45px;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            font-size: 28px;
+            color: #555;
+            font-weight: 700;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #ff7b00;
+        }
+
+        #modern-gallery {
+            text-align: center;
+            padding: 50px 10px;
+            flex-grow: 1;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .gallery-item {
+            position: relative;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .gallery-item img {
+            width: 400px;
+            height: 300px;
+            display: block;
+            transition: transform 0.3s, opacity 0.4s;
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.03);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .modal img {
+            max-width: 90%;
+            max-height: 80%;
+            border-radius: 10px;
+        }
+        .back-btn {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            background: #ff7b00;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 8px;
+            transition: background 0.3s ease-in-out;
+        }
+
+        .back-btn:hover {
+            background: #ff5c00;
+        }
+
+ 
+
+        footer {
+            text-align: center;
+            padding: 15px;
+            background-color: #222;
+            color: white;
+            font-size: 14px;
+            margin-top: auto;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Modern Design Gallery</h1>
+        <nav>
+            <ul>
+                
+                <li><a href="pro1.html">Home</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="portfolio.html">Portfolio</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="javascript:history.back()" class="baack-btn">Back</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <section id="modern-gallery">
+        <div class="gallery">
+            <div class="gallery-item" onclick="openModal('m1.jpg')">
+                <img src="m1.jpg" alt="Modern Design 1">
+            </div>
+            <div class="gallery-item" onclick="openModal('m2.jpg')">
+                <img src="m2.jpg" alt="Modern Design 2">
+            </div>
+            <div class="gallery-item" onclick="openModal('m3.jpg')">
+                <img src="m3.jpg" alt="Modern Design 3">
+            </div>
+            <div class="gallery-item" onclick="openModal('m4.jpg')">
+                <img src="m4.jpg" alt="Modern Design 4">
+            </div>
+            <div class="gallery-item" onclick="openModal('m5.jpg')">
+                <img src="m5.jpg" alt="Modern Design 5">
+            </div>
+            <div class="gallery-item" onclick="openModal('m6.jpg')">
+                <img src="m6.jpg" alt="Modern Design 6">
+            </div>
+            <div class="gallery-item" onclick="openModal('m7.jpg')">
+                <img src="m7.jpg" alt="Modern Design 7">
+            </div>
+            <div class="gallery-item" onclick="openModal('m8.jpg')">
+                <img src="m8.jpg" alt="Modern Design 8">
+            </div>
+            <div class="gallery-item" onclick="openModal('m9.jpg')">
+                <img src="m9.jpg" alt="Modern Design 9">
+            </div>
+            <div class="gallery-item" onclick="openModal('m10.jpg')">
+                <img src="m10.jpg" alt="Modern Design 10">
+            </div>
+            <div class="gallery-item" onclick="openModal('m11.jpg')">
+                <img src="m11.jpg" alt="Modern Design 11">
+            </div>
+            <div class="gallery-item" onclick="openModal('m12.jpg')">
+                <img src="m12.jpg" alt="Modern Design 12">
+            </div>
+            <div class="gallery-item" onclick="openModal('m13.jpg')">
+                <img src="m13.jpg" alt="Modern Design 13">
+            </div>
+        </div>
+    </section>
+
+    <div id="modal" class="modal" onclick="closeModal()">
+        <img id="modal-img" src="" alt="Expanded View">
+        <button class="back-btn" onclick="closeModal(); event.stopPropagation();">Back</button>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Elegant Interiors. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function openModal(imageSrc) {
+            document.getElementById('modal-img').src = imageSrc;
+            document.getElementById('modal').style.display = "flex";
+        }
+
+        function closeModal() {
+            document.getElementById('modal').style.display = "none";
+        }
+    </script>
+</body>
+</html>

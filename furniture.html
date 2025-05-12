@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom Furniture Gallery</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            color: #333;
+            padding-top: 120px;
+        }
+
+        header {
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        header h1 {
+            font-size: 45px;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+        }
+
+        nav ul li {
+            display: inline;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            font-size: 28px;
+            color: #555;
+            font-weight: 700;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #ff7b00;
+        }
+
+        #furniture-gallery {
+            text-align: center;
+            padding: 50px 10px;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .gallery-item {
+            position: relative;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+            cursor: pointer;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.03);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .modal img {
+            max-width: 90%;
+            max-height: 80%;
+            border-radius: 10px;
+        }
+
+        .back-btn {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            background: #ff7b00;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 8px;
+            transition: background 0.3s ease-in-out;
+        }
+
+        .back-btn:hover {
+            background: #ff5c00;
+        }
+
+        footer {
+            text-align: center;
+            padding: 15px;
+            background-color: #222;
+            color: white;
+            font-size: 14px;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Custom Furniture Gallery</h1>
+        <nav>
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="portfolio.html">Portfolio</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="javascript:history.back()" class="baack-btn">Back</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <section id="furniture-gallery">
+        <div class="gallery">
+            <div class="gallery-item" onclick="openModal('f1.jpg')">
+                <img src="f1.jpg" alt="f1">
+            </div>
+            <div class="gallery-item" onclick="openModal('f2.jpg')">
+                <img src="f2.jpg" alt="f2">
+            </div>
+            <div class="gallery-item" onclick="openModal('f3.jpg')">
+                <img src="f3.jpg" alt="f3">
+            </div>
+            <div class="gallery-item" onclick="openModal('f4.jpg')">
+                <img src="f4.jpg" alt="f4">
+            </div>
+            <div class="gallery-item" onclick="openModal('f5.jpg')">
+                <img src="f5.jpg" alt="f5">
+            </div>
+            <div class="gallery-item" onclick="openModal('f6.jpg')">
+                <img src="f6.jpg" alt="f6">
+            </div>
+            <div class="gallery-item" onclick="openModal('f7.jpg')">
+                <img src="f7.jpg" alt="f7">
+            </div>
+            <div class="gallery-item" onclick="openModal('f8.jpg')">
+                <img src="f8.jpg" alt="f8">
+            </div>
+            <div class="gallery-item" onclick="openModal('f9.jpg')">
+                <img src="f9.jpg" alt="f9">
+            </div>
+            <div class="gallery-item" onclick="openModal('f10.jpg')">
+                <img src="f10.jpg" alt="f10">
+            </div>
+            <div class="gallery-item" onclick="openModal('f11.jpg')">
+                <img src="f11.jpg" alt="f11">
+            </div>
+            <div class="gallery-item" onclick="openModal('f12.jpg')">
+                <img src="f12.jpg" alt="f12">
+            </div>
+            <div class="gallery-item" onclick="openModal('f13.jpg')">
+                <img src="f13.jpg" alt="f13">
+            </div>
+            <div class="gallery-item" onclick="openModal('f14.jpg')">
+                <img src="f14.jpg" alt="f14">
+            </div>
+        </div>
+    </section>
+
+    <div id="modal" class="modal" onclick="closeModal()">
+        <img id="modal-img" src="" alt="Expanded View">
+        <button class="back-btn" onclick="closeModal(); event.stopPropagation();">Back</button>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Elegant Interiors. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function openModal(imageSrc) {
+            const modal = document.getElementById('modal');
+            const modalImg = document.getElementById('modal-img');
+            modalImg.src = imageSrc;
+            modal.style.display = "flex";
+        }
+
+        function closeModal() {
+            document.getElementById('modal').style.display = "none";
+        }
+
+        document.getElementById('modal').addEventListener("click", function(event) {
+            if (event.target === this) {
+                closeModal();
+            }
+        });
+
+        document.addEventListener("keydown", function(event) {
+            if (event.key === "Escape") {
+                closeModal();
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interior Design</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header>
+        <h1>Design Dwells</h1>
+        <nav>
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="portfolio.html">Portfolio</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section id="home">
+        <p><b>Dreamed</b> Design is Here...</p>
+        <a href="services.html" class="center-button">Look More</a>
+    </section>
+    <section id="hero" class="hero">
+        <div class="container">
+            <h2>Elevate Your Space with Elegance</h2>
+            <p><b>Luxury interiors tailored to perfection. we take pride in transforming spaces into elegant, functional, and visually stunning interiors. Our projects range from luxurious homes to modern commercial spaces, each uniquely crafted to reflect our clients' tastes and preferences.</b></p>
+        </div>
+    </section>
+    
+    <section id="services">
+        <h2>Our Services</h2>
+        <div class="services-container">
+            
+            <a href="resendential.html" class="service-link">
+                <div class="service-card">
+                    <h3>🏠 Residential Design</h3>
+                    <p>Transform your home into a beautiful living space with our expert design solutions.</p>                           
+                </div>
+            </a>
+    
+            <a href="commercia.html" class="service-link">
+                <div class="service-card">
+                    <h3>🏢 Commercial Design</h3>
+                    <p>Enhance your workspace with modern, functional, and stylish designs.</p>
+                </div>
+            </a>
+    
+            <a href="space.html" class="service-link">
+                <div class="service-card">
+                    <h3>📐 Space Planning</h3>
+                    <p>Maximize efficiency and aesthetics with our strategic space planning services.</p>
+                </div>
+            </a>
+    
+            <a href="furniture.html" class="service-link">
+                <div class="service-card">
+                    <h3>🛋️ Custom Furniture</h3>
+                    <p>Get unique, tailor-made furniture that perfectly fits your style and space.</p>
+                </div>
+            </a>
+    
+        </div>
+    </section>
+    
+            <section id="portfolio">
+                <h2>Our Masterpieces</h2>
+                
+                <!-- Filter Buttons -->
+                <div class="filter-buttons">
+                    <a href="">
+                    <button data-filter="all">All</button>
+                </a>
+                    <a href="resendential.html">
+                        <button data-filter="residential">Residential</button>
+                    </a>
+                    <a href="commercia.html">
+                    <button data-filter="commercial">Commercial</button>
+                    </a>
+                    <a href="modern.html">
+                    <button data-filter="modern">Modern</button>
+                    </a>
+                </div>
+            
+                <div class="gallery">
+                    <div class="gallery-item residential">
+                        <img src="p1.jpg" alt="Elegant Living Room">
+                        <div class="overlay">
+                            <h3>Elegant Living Room</h3>
+                        </div>
+                    </div>
+                    <div class="gallery-item commercial">
+                        <img src="p2.jpg" alt="Luxury Workspace">
+                        <div class="overlay">
+                            <h3>Luxury Workspace</h3>
+                        </div>
+                    </div>
+                    <div class="gallery-item modern">
+                        <img src="p3.jpg" alt="Communication Area">
+                        <div class="overlay">
+                            <h3>Communication Area</h3>
+                        </div>
+                    </div>
+                    <div class="gallery-item residential">
+                        <img src="p5.jpg" alt="Showpiece Area">
+                        <div class="overlay">
+                            <h3>Showpiece Area</h3>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section id="services" class="services-section">
+                <div class="services-content">
+                    <h2 style="font-size: 48px;">We provide <br><strong style="font-size: 50px;">Awesome Services</strong></h2>
+                    <p style="font-size: 30px;">Client is the soul of the project. Our main goal is to illustrate his</p>
+                </div>
+                <div class="stats-container">
+                    <div class="stats-box">
+                        
+                        <h3  style="font-size: 36px;">135</h3>
+                        <p style="font-size: 30px;">Site Area</p>
+                    </div>
+                    <div class="stats-box">
+                        
+                        <h3  style="font-size: 36px;">800</h3>
+                        
+                        <p style="font-size: 30px;">Yards</p>
+                    </div>
+                </div>
+            </section>
+
+
+
+            <section id="contact">
+                <h2>Let's Connect</h2>
+                <p>We’d love to hear from you! Send us a message and we'll get back to you very soon.</p>
+            
+                <form>
+                    <div class="input-box">
+                        <input type="text" required>
+                        <label>Your Name</label>
+                    </div>
+                    
+                    <div class="input-box">
+                        <input type="email" required>
+                        <label>Your Email</label>
+                    </div>
+            
+                    <div class="input-box">
+                        <textarea required></textarea>
+                        <label>Your Message</label>
+                    </div>
+            
+                    <button type="submit">Send Message</button>
+                </form>
+            </section>
+    
+    <footer>
+        <p>&copy; 2025 Elegant Interiors. All rights reserved.</p>
+    </footer>
+</body>
+</html>
